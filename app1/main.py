@@ -6,11 +6,16 @@ import os, uvicorn
 
 app = FastAPI()
 
-
 @app.get("/")
 def read_root():
+    return {
+        "health":True,
+    }
+
+@app.get("/call")
+def read_root():
     try:
-        response = requests.get('http://app2:8002/sample').text
+        response = requests.get('http://app2_service:8001/sample').text
         response = json.loads(response)
     except KeyError as e:
         print('error in network layer: ', e)
