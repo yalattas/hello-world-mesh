@@ -1,0 +1,26 @@
+version: "3.9"
+services:
+  app1:
+    container_name: app1
+    build: ./app1
+    volumes:
+      - ./app1:/app
+    environment:
+      APP_PORT: 8000
+    ports:
+      - "8000:8000"
+    restart: always
+  app2:
+    container_name: app2
+    build: ./app2
+    volumes:
+      - ./app2:/app
+    environment:
+      APP_PORT: 8000
+    ports:
+      - "8001:8000"
+    restart: always
+
+networks:
+  default:
+    name: app_custom_network
