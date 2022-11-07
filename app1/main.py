@@ -15,7 +15,7 @@ def read_root():
 @app.get("/call")
 def read_root():
     try:
-        response = requests.get('http://app2_service:8001/sample').text
+        response = requests.get('http://service2.survey.spot.local:8001/sample').text
         response = json.loads(response)
     except KeyError as e:
         print('error in network layer: ', e)

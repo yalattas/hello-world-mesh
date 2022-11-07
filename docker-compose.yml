@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  app1_service:
+  service1.survey.spot.local:
     container_name: app1
     build: ./app1
     volumes:
@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:8000"
     restart: always
-  app2_service:
+  service2.survey.spot.local:
     container_name: app2
     build: ./app2
     volumes:
